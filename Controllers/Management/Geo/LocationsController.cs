@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AgrixemAPI.Core.Models.Management;
@@ -21,11 +20,36 @@ namespace AgrixemAPI.Controllers.Management.Geo
             _context = context;
         }
 
-        // GET: api/Locations
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Location>>> GetLocations()
+        // GET: api/Locations/cattle/5
+        [HttpGet("cattle/{farmId}")]
+        public async Task<ActionResult<IEnumerable<Location>>> GetAllCattleLocations(int farmId)
         {
-            return await _context.Locations.ToListAsync();
+            return await _context.Locations.Where(e => e.FarmID == farmId && e.AnimalType=='C').ToListAsync();
+        }
+        // GET: api/Locations/goats/5
+        [HttpGet("goats/{farmId}")]
+        public async Task<ActionResult<IEnumerable<Location>>> GetAllGoatsLocations(int farmId)
+        {
+            return await _context.Locations.Where(e => e.FarmID == farmId && e.AnimalType == 'G').ToListAsync();
+        }
+        // GET: api/Locations/cattle/current/5
+        [HttpGet("cattle/current/{farmId}")]
+        public async Task<ActionResult<IEnumerable<Location>>> GetCurrentCattleLocations(int farmId)
+        {
+            var Today = DateTime.Now; 
+            return await _context.Locations
+                .Where(e => e.FarmID == farmId && e.AnimalType == 'C' && e.Time.Day==Today.Day)
+                .ToListAsync();
+
+        }
+        // GET: api/Locations/goats/current/5
+        [HttpGet("goats/current/{farmId}")]
+        public async Task<ActionResult<IEnumerable<Location>>> GetCurrentGoatsLocations(int farmId)
+        {
+            var Today = DateTime.Now;
+            return await _context.Locations
+                .Where(e => e.FarmID == farmId && e.AnimalType == 'G' && e.Time.Day == Today.Day)
+                .ToListAsync();
         }
 
         // GET: api/Locations/5
