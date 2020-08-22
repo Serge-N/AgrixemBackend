@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AgrixemAPI.Core.Models.Production.Goats.Goat" Collapsed="true">
+    <Position X="5.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAgAAhAAAAAQAAAAQQAAAAAEAIAAAAAIAAAE=</HashCode>
+      <FileName>Core\Models\Production\Goats\Goat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Goats.GroupCure" Collapsed="true">
+    <Position X="9.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAgAIAAAAAAAAAAAAAAAABAAIAAAAAEAA=</HashCode>
+      <FileName>Core\Models\Production\Goats\GroupCure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Goats.Cure" Collapsed="true">
+    <Position X="9.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACgAgAIAAAAAAAAAACAAAAAAYQIAAAAAEAA=</HashCode>
+      <FileName>Core\Models\Production\Goats\Cure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Goats.Kid" Collapsed="true">
+    <Position X="0.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAgMAAAAAAgAAA=</HashCode>
+      <FileName>Core\Models\Production\Goats\Kid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Goats.Doe" Collapsed="true">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAgAACAAAAAAAEAAAAAAAAIAAQAEAAAAA=</HashCode>
+      <FileName>Core\Models\Production\Goats\Doe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Goats.Source" Collapsed="true">
+    <Position X="0.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAggAA=</HashCode>
+      <FileName>Core\Models\Production\Goats\Source.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Goats.GoatFeed" Collapsed="true">
+    <Position X="5.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAgAAAAAAAAAAAAAAABAABIAAAAAAAAAA=</HashCode>
+      <FileName>Core\Models\Production\Goats\GoatFeed.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Goats.GoatMarket" Collapsed="true">
+    <Position X="5.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAACIAAAAAAAABAAAAAAAAAAAAAIAAEAAAgAAA=</HashCode>
+      <FileName>Core\Models\Production\Goats\GoatMarket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

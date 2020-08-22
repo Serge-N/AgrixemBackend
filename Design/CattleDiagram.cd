@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AgrixemAPI.Core.Models.Production.Cattle.Cattle" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIAAAAEAAAYhAAAAAABAAAAQAAAAAEAAAAAgAIAAAA=</HashCode>
+      <FileName>Core\Models\Production\Cattle\Cattle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Pedigree" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAEAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Models\Production\Cattle\Pedigree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Cattle.Growth" Collapsed="true">
+    <Position X="0.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAACIAAAAAAAAAAAAAAAAQYAAAgIAAEABAAAAA=</HashCode>
+      <FileName>Core\Models\Production\Cattle\Growth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Cattle.Fertility" Collapsed="true">
+    <Position X="0.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAIAEgAAACEAAAAAAAAAAAAAIAAAAQAAAAAA=</HashCode>
+      <FileName>Core\Models\Production\Cattle\Fertility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Cattle.Pasture" Collapsed="true">
+    <Position X="5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Core\Models\Production\Cattle\Pasture.cs</FileName>
+      <NewMemberFileName>Core\Models\Production\Cattle\Food.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Cattle.Treatment" Collapsed="true">
+    <Position X="9.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAgAKAEgAAAAAAAAAAAAAAAAAABAAIAAAAAEAA=</HashCode>
+      <FileName>Core\Models\Production\Cattle\Treatment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Cattle.Vaccination" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAACAAwAAAAAAAAAAAAAAAAAABIAIAAAAAAQA=</HashCode>
+      <FileName>Core\Models\Production\Cattle\Vaccination.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Cattle.Deworming" Collapsed="true">
+    <Position X="9.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAKAAwAAAAAAAAAAAAAAAAAABIAIAAAAAAAA=</HashCode>
+      <FileName>Core\Models\Production\Cattle\Deworming.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Cattle.Food" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABIAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Core\Models\Production\Cattle\Food.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

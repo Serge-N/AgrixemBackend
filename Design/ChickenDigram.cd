@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AgrixemAPI.Core.Models.Diseases" Collapsed="true">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAABAABAAAAAAAAAAAAgAAAAAAAgAAA=</HashCode>
+      <FileName>Core\Models\Production\Chicken\Diseases.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Feed" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAhAAA=</HashCode>
+      <FileName>Core\Models\Production\Chicken\Feed.cs</FileName>
+      <NewMemberFileName>Core\Models\Production\Feed.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Chicken.Sales" Collapsed="true">
+    <Position X="10.25" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAIAAACAAAEAAAAAAAgAAAAAAAAAAABggAAA=</HashCode>
+      <FileName>Core\Models\Production\Chicken\Sales.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Chicks" Collapsed="true">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAgAAABEAAAAAAAAAAAAAACAAAAAIgAAA=</HashCode>
+      <FileName>Core\Models\Production\Chicken\Chicken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

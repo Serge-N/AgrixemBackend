@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AgrixemAPI.Core.Models.Production.Pig.Parents" Collapsed="true">
+    <Position X="4" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAABAAAAAAAAAAAAAABAAAAAAAAABA=</HashCode>
+      <FileName>Core\Models\Production\Pigs\Parents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Pig.Pig" Collapsed="true">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAEAAAAhEAAAAAAAAABQAAAAAAAAAAAAAIIABg=</HashCode>
+      <FileName>Core\Models\Production\Pigs\Pigs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Pig.Litter" Collapsed="true">
+    <Position X="4" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAIAAAgIAAAAQAAABA=</HashCode>
+      <FileName>Core\Models\Production\Pigs\Litter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Pig.Reproduction" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAABAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Core\Models\Production\Pigs\Reproduction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Pig.Breeding" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAgAAAAAAAAAAACAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Models\Production\Pigs\Breeding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Pig.Farrowing" Collapsed="true">
+    <Position X="10" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAiAAAAAABAAABAAAAAAA=</HashCode>
+      <FileName>Core\Models\Production\Pigs\Farrowing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Pig.PigTreatment" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAABAAAAAggAAAAAAAAAAAAAAAAABAAAAAAAAABA=</HashCode>
+      <FileName>Core\Models\Production\Pigs\PigTreatment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Pig.PigFeed" Collapsed="true">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADAAAAAAAAAAgIAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Models\Production\Pigs\PigFeed.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgrixemAPI.Core.Models.Production.Pig.PigMarket" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAYAAAAAABAAAAAAAAAAAAAAAAAAEABAAABA=</HashCode>
+      <FileName>Core\Models\Production\Pigs\PigMarket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
