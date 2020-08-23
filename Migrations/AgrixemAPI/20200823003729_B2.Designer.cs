@@ -4,14 +4,16 @@ using AgrixemAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AgrixemAPI.Migrations.AgrixemAPI
 {
     [DbContext(typeof(AgrixemAPIContext))]
-    partial class AgrixemAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20200823003729_B2")]
+    partial class B2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -38,7 +38,7 @@ namespace AgrixemAPI.Controllers.Management.Geo
         {
             var Today = DateTime.Now; 
             return await _context.Locations
-                .Where(e => e.FarmID == farmId && e.AnimalType == 'C' && e.Time.Day==Today.Day)
+                .Where(e => e.FarmID == farmId && e.AnimalType == 'C' && e.Timestamp.Day==Today.Day)
                 .ToListAsync();
 
         }
@@ -48,7 +48,7 @@ namespace AgrixemAPI.Controllers.Management.Geo
         {
             var Today = DateTime.Now;
             return await _context.Locations
-                .Where(e => e.FarmID == farmId && e.AnimalType == 'G' && e.Time.Day == Today.Day)
+                .Where(e => e.FarmID == farmId && e.AnimalType == 'G' && e.Timestamp.Day == Today.Day)
                 .ToListAsync();
         }
 

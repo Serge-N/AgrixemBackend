@@ -1,20 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AgrixemAPI.Core.Models.Management
 {
     public class Location
     {
         public long ID { get; set; }
-        public char AnimalType { get; set; }
-        public int FarmID { get; set;}
+        public int FarmID { get; set; }
         public long AnimalID { get; set; }
-        public DateTime Time { get; set; }
-        public int Temperature { get; set; }
-        public decimal Lat { get; set; }
-        public decimal Lon{ get; set; }
+        public char AnimalType { get; set; }
+        public DateTime Timestamp { get; set; }
+        public double? Speed { get; set; }
+        public double? VerticalAccuracy { get; set; }
+        public double? Accuracy { get; set; }
+        public double? Altitude { get; set; }
+        public double? Course { get; set; }
+        public double Lat { get; set; }
+        public double Lon { get; set; }
 
     }
 }
