@@ -80,12 +80,7 @@ namespace AgrixemBackend
                         .AllowAnyMethod()
                         .AllowAnyHeader());
             });
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                {
-                    options.Audience = "https://localhost:5001/";
-                    options.Authority = "http://localhost:5000/";
-                });
+            
 
             services.AddControllersWithViews().AddNewtonsoftJson(options =>
             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
