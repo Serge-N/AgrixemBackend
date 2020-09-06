@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AgrixemAPI.Core.Models.General;
 using AgrixemAPI.Data;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace AgrixemAPI.Controllers.General
 {
