@@ -13,7 +13,6 @@ namespace AgrixemAPI.Controllers.General
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class FarmsController : ControllerBase
     {
         private readonly AgrixemAPIContext _context;
