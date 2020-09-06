@@ -9,12 +9,12 @@ using AgrixemAPI.Core.Models.General;
 using AgrixemAPI.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace AgrixemAPI.Controllers.General
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class FarmsController : ControllerBase
     {
         private readonly AgrixemAPIContext _context;
