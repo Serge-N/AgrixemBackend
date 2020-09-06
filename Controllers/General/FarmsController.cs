@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AgrixemAPI.Core.Models.General;
 using AgrixemAPI.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AgrixemAPI.Controllers.General
 {
@@ -30,6 +31,7 @@ namespace AgrixemAPI.Controllers.General
 
         // GET: api/Farms/5
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<Farms>> GetFarms(int id)
         {
             var farms = await _context.Farms.FindAsync(id);
