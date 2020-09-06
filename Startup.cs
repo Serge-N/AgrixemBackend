@@ -30,7 +30,7 @@ namespace AgrixemBackend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            
+
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
@@ -57,7 +57,7 @@ namespace AgrixemBackend
                 c.IncludeXmlComments(xmlPath);
             });
 
-             services.AddMvc(c => c.Conventions.Add(new ApiExplorerIgnores()));
+            services.AddMvc(c => c.Conventions.Add(new ApiExplorerIgnores()));
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
         {
@@ -80,6 +80,13 @@ namespace AgrixemBackend
                         .AllowAnyMethod()
                         .AllowAnyHeader());
             });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.Audience = "https://localhost:5001/";
+                    options.Authority = "http://localhost:5000/";
+                });
+
             services.AddControllersWithViews().AddNewtonsoftJson(options =>
             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
@@ -88,15 +95,15 @@ namespace AgrixemBackend
 
             services.AddDbContext<AgrixemAPIContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("AgrixemAPIContext")));
-            
-           services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("AgrixemAPIContext")));
-      
-           //Two Db contexts to apply the separtion of concerns principal
-           services.AddIdentity<User, IdentityRole>(options => options.Stores.MaxLengthForKeys = 128)
-               .AddEntityFrameworkStores<ApplicationDbContext>()
-               .AddDefaultTokenProviders();
 
-       
+            services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("AgrixemAPIContext")));
+
+            //Two Db contexts to apply the separtion of concerns principal
+            services.AddIdentity<User, IdentityRole>(options => options.Stores.MaxLengthForKeys = 128)
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
+
         }
 
 
