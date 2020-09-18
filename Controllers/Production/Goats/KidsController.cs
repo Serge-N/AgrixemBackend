@@ -1,58 +1,59 @@
-﻿using AgrixemAPI.Core.Models.General;
-using AgrixemAPI.Data;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using AgrixemAPI.Core.Models.Production.Goats;
+using AgrixemAPI.Data;
 
-namespace AgrixemAPI.Controllers.General
+namespace AgrixemAPI.Controllers.Production.Goats
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FarmsController : ControllerBase
+    public class KidsController : ControllerBase
     {
         private readonly AgrixemAPIContext _context;
 
-        public FarmsController(AgrixemAPIContext context)
+        public KidsController(AgrixemAPIContext context)
         {
             _context = context;
         }
 
-        // GET: api/Farms
+        // GET: api/Kids
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Farms>>> GetFarms()
+        public async Task<ActionResult<IEnumerable<Kid>>> GetKid()
         {
-            return await _context.Farms.ToListAsync();
+            return await _context.Kid.ToListAsync();
         }
 
-        // GET: api/Farms/5
+        // GET: api/Kids/5
         [HttpGet("{id}")]
-
-        public async Task<ActionResult<Farms>> GetFarms(int id)
+        public async Task<ActionResult<Kid>> GetKid(long id)
         {
-            var farms = await _context.Farms.FindAsync(id);
+            var kid = await _context.Kid.FindAsync(id);
 
-            if (farms == null)
+            if (kid == null)
             {
                 return NotFound();
             }
 
-            return farms;
+            return kid;
         }
 
-        // PUT: api/Farms/5
+        // PUT: api/Kids/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutFarms(int id, Farms farms)
+        public async Task<IActionResult> PutKid(long id, Kid kid)
         {
-            if (id != farms.ID)
+            if (id != kid.ID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(farms).State = EntityState.Modified;
+            _context.Entry(kid).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +61,7 @@ namespace AgrixemAPI.Controllers.General
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!FarmsExists(id))
+                if (!KidExists(id))
                 {
                     return NotFound();
                 }
@@ -73,37 +74,37 @@ namespace AgrixemAPI.Controllers.General
             return NoContent();
         }
 
-        // POST: api/Farms
+        // POST: api/Kids
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Farms>> PostFarms(Farms farms)
+        public async Task<ActionResult<Kid>> PostKid(Kid kid)
         {
-            _context.Farms.Add(farms);
+            _context.Kid.Add(kid);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetFarms", new { id = farms.ID }, farms);
+            return CreatedAtAction("GetKid", new { id = kid.ID }, kid);
         }
 
-        // DELETE: api/Farms/5
+        // DELETE: api/Kids/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Farms>> DeleteFarms(int id)
+        public async Task<ActionResult<Kid>> DeleteKid(long id)
         {
-            var farms = await _context.Farms.FindAsync(id);
-            if (farms == null)
+            var kid = await _context.Kid.FindAsync(id);
+            if (kid == null)
             {
                 return NotFound();
             }
 
-            _context.Farms.Remove(farms);
+            _context.Kid.Remove(kid);
             await _context.SaveChangesAsync();
 
-            return farms;
+            return kid;
         }
 
-        private bool FarmsExists(int id)
+        private bool KidExists(long id)
         {
-            return _context.Farms.Any(e => e.ID == id);
+            return _context.Kid.Any(e => e.ID == id);
         }
     }
 }

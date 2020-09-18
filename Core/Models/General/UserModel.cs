@@ -25,9 +25,9 @@ namespace AgrixemBackend
 
         [PersonalData, Required, StringLength(20)]
         public DateTime DOB { get; set; }
-     
+
         [PersonalData]
         public int FarmID { get; set; }
-        
+
     }
 }

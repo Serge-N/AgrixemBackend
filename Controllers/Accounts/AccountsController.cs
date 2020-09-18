@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,10 +20,11 @@ namespace AgrixemBackend
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] RegisterModel model)
         {
-            var newUser = new User { 
-                UserName = model.Email, 
-                Email = model.Email, 
-                PhoneNumber = model.PhoneNumber ,
+            var newUser = new User
+            {
+                UserName = model.Email,
+                Email = model.Email,
+                PhoneNumber = model.PhoneNumber,
                 DOB = model.DOB,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
@@ -44,10 +44,10 @@ namespace AgrixemBackend
             }
 
             // Add all new users to their respective roles
-       
+
             await _userManager.AddToRoleAsync(newUser, model.Purpose);
 
-            
+
             return Ok(new RegisterResult { Successful = true });
         }
 

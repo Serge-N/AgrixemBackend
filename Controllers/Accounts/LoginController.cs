@@ -32,7 +32,10 @@ namespace AgrixemBackend
         {
             var result = await _signInManager.PasswordSignInAsync(login.Email, login.Password, false, false);
 
-            if (!result.Succeeded) return BadRequest(new LoginResult { Successful = false, Error = "Username and password are invalid." });
+            if (!result.Succeeded)
+            {
+                return BadRequest(new LoginResult { Successful = false, Error = "Username and password are invalid." });
+            }
 
             var user = await _signInManager.UserManager.FindByEmailAsync(login.Email);
             var roles = await _signInManager.UserManager.GetRolesAsync(user);
@@ -56,8 +59,9 @@ namespace AgrixemBackend
             claims.Add(new Claim("ID", user.Id));
 
             foreach (var role in roles)
+            {
                 claims.Add(new Claim(ClaimTypes.Role, role));
-
+            }
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -73,6 +77,6 @@ namespace AgrixemBackend
 
             return Ok(new LoginResult { Successful = true, Token = new JwtSecurityTokenHandler().WriteToken(token) });
         }
-      
+
     }
 }

@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Hosting;
 
 namespace AgrixemAPI.Controllers.General
 {
@@ -45,8 +45,9 @@ namespace AgrixemAPI.Controllers.General
             string[] allowedImageTypes = { ".png", ".jpeg", ".jpg" };
             //check if file was fully uploaded
             if (Picture.Length == 0 || Picture == null)
-
+            {
                 return BadRequest("Upload  a New File");
+            }
 
 
             //Check if it is an image
@@ -55,8 +56,9 @@ namespace AgrixemAPI.Controllers.General
             string imageExtension = Path.GetExtension(imageName);
 
             if (!allowedImageTypes.Contains(imageExtension))
-
+            {
                 return BadRequest("File Type not Accepted");
+            }
 
 
 
@@ -70,8 +72,9 @@ namespace AgrixemAPI.Controllers.General
                 string userFolderPath = Path.Combine(mainDictory, "users", ID);
 
                 if (!Directory.Exists(userFolderPath))
-
+                {
                     Directory.CreateDirectory(userFolderPath);
+                }
 
                 string newFileName = Title;
 
@@ -91,16 +94,18 @@ namespace AgrixemAPI.Controllers.General
                 string specialFolderPath = Path.Combine(mainDictory, "Farms", ID);
 
                 if (!Directory.Exists(specialFolderPath))
-
+                {
                     Directory.CreateDirectory(specialFolderPath);
+                }
 
                 //Deal with farm pictures
                 if (FormType == "Farm" || FormType == "farm")
                 {
                     string farmFolderPath = Path.Combine(specialFolderPath, "Farm");
                     if (!Directory.Exists(farmFolderPath))
-
+                    {
                         Directory.CreateDirectory(farmFolderPath);
+                    }
 
                     string newFileName = $"{Title}{imageExtension}";
 
@@ -119,8 +124,9 @@ namespace AgrixemAPI.Controllers.General
                     //animals folder
                     string animalFolderPath = Path.Combine(specialFolderPath, "Animals");
                     if (!Directory.Exists(animalFolderPath))
-
+                    {
                         Directory.CreateDirectory(animalFolderPath);
+                    }
 
                     //make folders based on animal type
                     if (AnimalType == "Cattle" || AnimalType == "cattle")
@@ -129,8 +135,9 @@ namespace AgrixemAPI.Controllers.General
                         string cattleFolderPath = Path.Combine(animalFolderPath, "Cattle");
 
                         if (!Directory.Exists(cattleFolderPath))
-
+                        {
                             Directory.CreateDirectory(cattleFolderPath);
+                        }
 
                         //Check many of single ID;
                         if (Mode == "Many" || Mode == "many")
@@ -139,8 +146,9 @@ namespace AgrixemAPI.Controllers.General
                             string KraalFolderPath = Path.Combine(cattleFolderPath, "Kraal");
 
                             if (!Directory.Exists(KraalFolderPath))
-
+                            {
                                 Directory.CreateDirectory(KraalFolderPath);
+                            }
 
                             string newFileName = $"{Title}{imageExtension}";
 
@@ -190,8 +198,9 @@ namespace AgrixemAPI.Controllers.General
                         string goatsFolderPath = Path.Combine(animalFolderPath, "Goats");
 
                         if (!Directory.Exists(goatsFolderPath))
-
+                        {
                             Directory.CreateDirectory(goatsFolderPath);
+                        }
 
                         //Check many of single ID;
                         if (Mode == "Many" || Mode == "many")
@@ -254,8 +263,9 @@ namespace AgrixemAPI.Controllers.General
                         string pigsFolderPath = Path.Combine(animalFolderPath, "Pigs");
 
                         if (!Directory.Exists(pigsFolderPath))
-
+                        {
                             Directory.CreateDirectory(pigsFolderPath);
+                        }
 
                         //Check many of single ID;
                         if (Mode == "Many" || Mode == "many")
@@ -264,8 +274,9 @@ namespace AgrixemAPI.Controllers.General
                             string KraalFolderPath = Path.Combine(pigsFolderPath, "Kraal");
 
                             if (!Directory.Exists(KraalFolderPath))
-
+                            {
                                 Directory.CreateDirectory(KraalFolderPath);
+                            }
 
                             string newFileName = $"{Title}{imageExtension}";
 
@@ -284,14 +295,16 @@ namespace AgrixemAPI.Controllers.General
                             string singleFolderPath = Path.Combine(pigsFolderPath, "Ids");
 
                             if (!Directory.Exists(singleFolderPath))
-
+                            {
                                 Directory.CreateDirectory(singleFolderPath);
+                            }
 
                             string finalPath = Path.Combine(singleFolderPath, AnimalID);
 
                             if (!Directory.Exists(finalPath))
-
+                            {
                                 Directory.CreateDirectory(finalPath);
+                            }
 
                             string newFileName = $"{Title}{imageExtension}";
 
@@ -305,10 +318,9 @@ namespace AgrixemAPI.Controllers.General
                             return Ok($"{newFileName} saved to this Pigs' Folder");
                         }
                         else
-
+                        {
                             return BadRequest("Dirty Pigs, We couldn't See the Folder...");
-
-
+                        }
                     }
                     else if (AnimalType == "Chicken" || AnimalType == "chicken")
                     {
@@ -316,8 +328,9 @@ namespace AgrixemAPI.Controllers.General
                         string chickenFolderPath = Path.Combine(animalFolderPath, "Chicken");
 
                         if (!Directory.Exists(chickenFolderPath))
-
+                        {
                             Directory.CreateDirectory(chickenFolderPath);
+                        }
 
                         //Check many of single ID;
                         if (Mode == "Many" || Mode == "many")
@@ -326,8 +339,9 @@ namespace AgrixemAPI.Controllers.General
                             string KraalFolderPath = Path.Combine(chickenFolderPath, "Kraal");
 
                             if (!Directory.Exists(KraalFolderPath))
-
+                            {
                                 Directory.CreateDirectory(KraalFolderPath);
+                            }
 
                             string newFileName = $"{Title}{imageExtension}";
 
@@ -342,23 +356,28 @@ namespace AgrixemAPI.Controllers.General
 
                         }
                         else if (Mode == "Single" || Mode == "single")
-
+                        {
                             return BadRequest("We never store pics for single chickens, ever.");
-
+                        }
                         else
-
+                        {
                             return BadRequest("Sorry, that Chicken found, yes that one... We couldn't find it.");
+                        }
                     }
-                    else return BadRequest("This Animal, We don't know what it is...");
-
+                    else
+                    {
+                        return BadRequest("This Animal, We don't know what it is...");
+                    }
                 }
-                else return BadRequest("Unclear Photo, We can't tell if its an Animal or Landscape");
-
+                else
+                {
+                    return BadRequest("Unclear Photo, We can't tell if its an Animal or Landscape");
+                }
             }
-            else return BadRequest("Exteremely bad image format, Give Up...This will never be.");
-
-
-
+            else
+            {
+                return BadRequest("Exteremely bad image format, Give Up...This will never be.");
+            }
         }
         #endregion
 
@@ -372,8 +391,9 @@ namespace AgrixemAPI.Controllers.General
 
 
             if (Directory.Exists(UserDictiory))
-
+            {
                 return ProcessDirectory(UserDictiory);
+            }
 
             return new List<string>() { };
         }
@@ -388,8 +408,9 @@ namespace AgrixemAPI.Controllers.General
             string farmDictiory = Path.Combine(mainDictory, "farms", ID, "Farm");
 
             if (Directory.Exists(farmDictiory))
-
+            {
                 return ProcessDirectory(farmDictiory);
+            }
 
             return new List<string>() { };
         }
@@ -405,8 +426,9 @@ namespace AgrixemAPI.Controllers.General
             string manyAnimals = Path.Combine(farmDictiory, animalType, "kraal");
 
             if (Directory.Exists(manyAnimals))
-
+            {
                 return ProcessDirectory(manyAnimals);
+            }
 
             return new List<string>() { };
         }
@@ -423,8 +445,9 @@ namespace AgrixemAPI.Controllers.General
             string singleAnimals = Path.Combine(farmDictiory, animalType, "Ids", AiD);
 
             if (Directory.Exists(singleAnimals))
-
+            {
                 return ProcessDirectory(singleAnimals);
+            }
 
             return new List<string>() { };
         }
@@ -437,7 +460,9 @@ namespace AgrixemAPI.Controllers.General
 
             List<string> photosList = new List<string>() { };
             foreach (var file in photoEntries)
+            {
                 photosList.Add(file.Name);
+            }
 
             return photosList;
         }
@@ -458,7 +483,9 @@ namespace AgrixemAPI.Controllers.General
                 return $"Deleted User Folder";
             }
             else
+            {
                 return NotFound();
+            }
         }
 
         // DELETE[Farm]: api/media/farms/
@@ -476,7 +503,9 @@ namespace AgrixemAPI.Controllers.General
                 return $"Deleted Farm Folder";
             }
             else
+            {
                 return NotFound();
+            }
         }
 
         //DELETE[Animal]: api/media/farms/{id}/animals/{animalType}/single/{AnimalID}
@@ -496,7 +525,9 @@ namespace AgrixemAPI.Controllers.General
                 return $"Deleted {animalType} Folder";
             }
             else
+            {
                 return NotFound();
+            }
         }
 
         #endregion

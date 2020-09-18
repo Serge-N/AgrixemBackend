@@ -14,8 +14,8 @@ namespace AgrixemAPI.Core.Models.Production.Cattle
         public string Disease { get; set; }
         public string Cure { get; set; }
         public string DrugName { get; set; }
-        public int ? DrugAmount { get; set; }
-        public  string DrugUnits { get; set; }
+        public int? DrugAmount { get; set; }
+        public string DrugUnits { get; set; }
         public string Remarks { get; set; }
     }
 }

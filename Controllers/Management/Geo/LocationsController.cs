@@ -1,11 +1,11 @@
-﻿using System;
+﻿using AgrixemAPI.Core.Models.Management;
+using AgrixemAPI.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using AgrixemAPI.Core.Models.Management;
-using AgrixemAPI.Data;
 
 namespace AgrixemAPI.Controllers.Management.Geo
 {
@@ -24,7 +24,7 @@ namespace AgrixemAPI.Controllers.Management.Geo
         [HttpGet("cattle/{farmId}")]
         public async Task<ActionResult<IEnumerable<Location>>> GetAllCattleLocations(int farmId)
         {
-            return await _context.Locations.Where(e => e.FarmID == farmId && e.AnimalType=='C').ToListAsync();
+            return await _context.Locations.Where(e => e.FarmID == farmId && e.AnimalType == 'C').ToListAsync();
         }
         // GET: api/Locations/goats/5
         [HttpGet("goats/{farmId}")]
@@ -36,9 +36,9 @@ namespace AgrixemAPI.Controllers.Management.Geo
         [HttpGet("cattle/current/{farmId}")]
         public async Task<ActionResult<IEnumerable<Location>>> GetCurrentCattleLocations(int farmId)
         {
-            var Today = DateTime.Now; 
+            var Today = DateTime.Now;
             return await _context.Locations
-                .Where(e => e.FarmID == farmId && e.AnimalType == 'C' && e.Timestamp.Day==Today.Day)
+                .Where(e => e.FarmID == farmId && e.AnimalType == 'C' && e.Timestamp.Day == Today.Day)
                 .ToListAsync();
 
         }

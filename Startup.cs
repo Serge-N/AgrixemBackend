@@ -1,19 +1,20 @@
+using AgrixemAPI.Controllers.Accounts;
+using AgrixemAPI.Data;
+using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.OpenApi.Models;
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Reflection;
-using System.IO;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using AgrixemAPI.Data;
-using AgrixemAPI.Controllers.Accounts;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
+using System.Reflection;
+using System.Text;
 
 namespace AgrixemBackend
 {
@@ -30,6 +31,8 @@ namespace AgrixemBackend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            //Add automapper
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -38,7 +41,7 @@ namespace AgrixemBackend
                 {
                     Title = "Agrixem API",
                     Version = "v1",
-                    Description = "A simple ASP.NET core web API for education purposes only.",
+                    Description = "A simple ASP.NET core web API for education purposes only. This project is a property of The University Of Zambia, School of Engineering",
                     Contact = new OpenApiContact
                     {
                         Name = "Serge Nalishiwa",
@@ -80,7 +83,7 @@ namespace AgrixemBackend
                         .AllowAnyMethod()
                         .AllowAnyHeader());
             });
-            
+
 
             services.AddControllersWithViews().AddNewtonsoftJson(options =>
             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore

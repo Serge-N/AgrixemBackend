@@ -5,7 +5,7 @@ namespace AgrixemBackend
 {
     public class RegisterModel
     {
-        
+
         [Required]
         [DataType(DataType.Text)]
         [Display(Name = "First name")]
@@ -29,7 +29,7 @@ namespace AgrixemBackend
         [DataType(DataType.Date)]
         [Display(Name = "Date Of Birth")]
         public DateTime DOB { get; set; }
-        
+
         [Required]
         [DataType(DataType.Text)]
         [Display(Name = "National Registration Card")]

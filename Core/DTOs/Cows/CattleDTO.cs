@@ -1,4 +1,4 @@
-﻿namespace AgrixemAPI.Core.Models.Production.Cattle
+﻿namespace AgrixemAPI.Core.DTOs.Cows
 {
     /// <summary>
     /// This class shows us all the cattle that we have.
@@ -17,7 +17,8 @@
     /// - Customer Mode preferences
     /// - Plus many more.
     /// </remarks>
-    public class Cattle
+
+    public class CattleDTO
     {
         public long ID { get; set; }
         public long TagID { get; set; }
@@ -28,6 +29,7 @@
         public string Name { get; set; }
         public string Sex { get; set; }
         public string Status { get; set; }
+
 
     }
 }

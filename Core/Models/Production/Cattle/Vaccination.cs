@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AgrixemAPI.Core.Models.Production.Cattle
 {
@@ -17,7 +14,7 @@ namespace AgrixemAPI.Core.Models.Production.Cattle
         public string Purpose { get; set; }
         public string Detail { get; set; }
         public string DrugName { get; set; }
-        public int ? DrugQuality { get; set; }
+        public int? DrugQuality { get; set; }
         public string DrugUnits { get; set; }
         public string Remark { get; set; }
         public string Done { get; set; }

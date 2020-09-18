@@ -1,12 +1,10 @@
-﻿using System;
+﻿using AgrixemAPI.Core.Models.Production.Cattle;
+using AgrixemAPI.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using AgrixemAPI.Core.Models.Production.Cattle;
-using AgrixemAPI.Data;
 
 namespace AgrixemAPI.Controllers.Production.Cows
 {
@@ -25,7 +23,7 @@ namespace AgrixemAPI.Controllers.Production.Cows
         [HttpGet("{farmId:int}")]
         public async Task<ActionResult<IEnumerable<Pasture>>> GetPasture(int farmId)
         {
-            return await _context.Pasture.Where(e =>e.FarmID ==farmId).ToListAsync();
+            return await _context.Pasture.Where(e => e.FarmID == farmId).ToListAsync();
         }
 
         // GET: api/Pastures/5

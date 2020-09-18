@@ -1,6 +1,4 @@
-﻿using AgrixemAPI.Core.Models.Production.Cattle;
-
-namespace AgrixemAPI.Core.Models
+﻿namespace AgrixemAPI.Core.Models
 {
     /// <summary>
     /// This class determine the parents of each cow.
@@ -10,8 +8,8 @@ namespace AgrixemAPI.Core.Models
     {
         public long CattleID { get; set; }
         public long CattleFK { get; set; }
-        public long ? MotherID { get; set; }
-        public long ? FatherID { get; set; }
-       
+        public long? MotherID { get; set; }
+        public long? FatherID { get; set; }
+
     }
 }

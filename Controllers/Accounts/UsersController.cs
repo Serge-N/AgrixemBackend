@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using AgrixemBackend;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using AgrixemBackend;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AgrixemAPI.Controllers.Accounts
 {
@@ -31,17 +31,17 @@ namespace AgrixemAPI.Controllers.Accounts
             if (users == null)
             {
                 return NotFound();
-            } 
+            }
 
             //Security you can never ever trust the client
 
             List<User> Users = new List<User>();
 
-            foreach(var user in users)
+            foreach (var user in users)
             {
                 var role = await _userManager.GetRolesAsync(user);
 
-                Users.Add (
+                Users.Add(
                     new User
                     {
                         FirstName = user.FirstName,
@@ -54,8 +54,8 @@ namespace AgrixemAPI.Controllers.Accounts
                         PhoneNumber = user.PhoneNumber,
                         Email = user.Email,
                         SecurityStamp = "-",
-                        ConcurrencyStamp ="-"
-                    } 
+                        ConcurrencyStamp = "-"
+                    }
                     );
             }
 
