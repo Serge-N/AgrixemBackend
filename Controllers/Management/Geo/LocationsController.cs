@@ -36,9 +36,11 @@ namespace AgrixemAPI.Controllers.Management.Geo
         [HttpGet("cattle/current/{farmId}")]
         public async Task<ActionResult<IEnumerable<Location>>> GetCurrentCattleLocations(int farmId)
         {
-            var Today = DateTime.Now;
+            var Today = DateTime.UtcNow;
             return await _context.Locations
-                .Where(e => e.FarmID == farmId && e.AnimalType == 'C' && e.Timestamp.Day == Today.Day)
+                .Where(e => e.FarmID == farmId &&
+                e.AnimalType == 'C' &&
+                e.Timestamp.Day == Today.Day)
                 .ToListAsync();
 
         }
@@ -46,9 +48,11 @@ namespace AgrixemAPI.Controllers.Management.Geo
         [HttpGet("goats/current/{farmId}")]
         public async Task<ActionResult<IEnumerable<Location>>> GetCurrentGoatsLocations(int farmId)
         {
-            var Today = DateTime.Now;
+            var Today = DateTime.UtcNow;
             return await _context.Locations
-                .Where(e => e.FarmID == farmId && e.AnimalType == 'G' && e.Timestamp.Day == Today.Day)
+                .Where(e => e.FarmID == farmId &&
+                e.AnimalType == 'G' &&
+                e.Timestamp.Day == Today.Day)
                 .ToListAsync();
         }
 
