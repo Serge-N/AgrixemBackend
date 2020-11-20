@@ -206,6 +206,7 @@ namespace AgrixemAPI.Data
             #endregion
         }
 
+
         #region DbSets
         public DbSet<Farms> Farms { get; set; }
         public DbSet<Cattle> Cattle { get; set; }

@@ -92,9 +92,9 @@ namespace AgrixemBackend
             services.AddMvc();
 
             services.AddDbContext<AgrixemAPIContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("AgrixemAPIContext")));
+                    options.UseSqlite(Configuration.GetConnectionString("AgrixemAPIContext")));
 
-            services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("AgrixemAPIContext")));
+            services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlite(Configuration.GetConnectionString("AgrixemAPIContext")));
 
             //Two Db contexts to apply the separtion of concerns principal
             services.AddIdentity<User, IdentityRole>(options => options.Stores.MaxLengthForKeys = 128)
