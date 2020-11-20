@@ -1,11 +1,3 @@
 {
-  "dependencies": {
-    "mssql1": {
-      "type": "mssql.local",
-      "connectionId": "AgrixemAPIContext"
-    },
-    "secrets1": {
-      "type": "secrets.user"
-    }
-  }
+  "dependencies": {}
 }
