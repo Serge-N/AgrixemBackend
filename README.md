@@ -21,6 +21,6 @@ Request a report from the school if you are interested.
 It is important to stress that this application is a **Minimum Viable Product**, to use this in production would require
 integration and unit testing. Some parts of the code would require refactoring. 
 
-It was as a shared backend for IoT, Mobile and SPA.
+It is a shared backend for IoT, Mobile and SPA.
 
 ###### The project is available at : [Azure App Service](https://agrixemapi.azurewebsites.net/swagger/index.html)
