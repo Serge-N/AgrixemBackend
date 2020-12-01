@@ -7,7 +7,7 @@ Techonology | Selected Option
 **Mode** | Stateless
 **Service API** |	Representational state transfer (REST)
 **Framework** |ASP 5
-**Alternatives** | Node, Django, Azure Function
+**Alternatives** | Node, Django, Azure Functions
 **Authentication** | Jwt Token with Claims
 **Others** | Open API standard
 
