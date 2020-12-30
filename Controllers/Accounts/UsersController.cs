@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -60,6 +62,21 @@ namespace AgrixemAPI.Controllers.Accounts
             }
 
             return Users;
+        }
+        // DELETE: api/Users/agsghh-svssgsg-gsgsg
+        [HttpDelete("{email}")]
+        public async Task<ActionResult<User>> DeleteGrowth(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            await _userManager.DeleteAsync(user);
+
+            return user;
         }
 
     }
