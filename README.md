@@ -23,4 +23,4 @@ integration and unit testing. Some parts of the code would require refactoring.
 
 It is a shared backend for IoT, Mobile and SPA.
 
-###### The project is available at : [Azure App Service](https://agrixemapi.azurewebsites.net/swagger/index.html)
+
